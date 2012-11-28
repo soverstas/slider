@@ -33,12 +33,7 @@ $(document).ready(function() {
             })
         });
     });
-//    var pager = function() {
-//        var $itemsArray = mini.getGlobal().$storage;
-//        return $itemsArray;
-//    }
-    
-    mini = $('.slider-mini').sliderGo({    
+    $('.slider-mini').sliderGo({    
         flag: {
             circle:true,
             halfNext: false,
@@ -89,7 +84,7 @@ $(document).ready(function() {
         }
     }
     );
-    normal = $('.slider').sliderGo({    
+    $('.slider').sliderGo({    
         flag: {
             circle:true,
             halfNext: false,
