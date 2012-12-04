@@ -33,7 +33,8 @@ $(document).ready(function() {
             })
         });
     });
-    $('.slider-mini').sliderGo({    
+    
+    mini = $('.slider-mini').sliderGo({    
         flag: {
             circle:true,
             halfNext: false,
@@ -84,7 +85,7 @@ $(document).ready(function() {
         }
     }
     );
-    $('.slider').sliderGo({    
+    normal = $('.slider').sliderGo({    
         flag: {
             circle:true,
             halfNext: false,

@@ -1,0 +1,39 @@
+.marginX-display {
+    width: 200px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #0f0;
+}
+
+.marginX-wrapper {
+    width: 200x;
+    height: 9999px;
+    position: absolute;
+}
+.marginX-block{
+    float: left;
+    height: 100px;
+    width: 200px;
+    background: green;
+    border-radius: 30px;
+}
+
+.marginY-display {
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #0f0;
+}
+
+.marginY-wrapper {
+    width: 9999x;
+    height: 200px;
+    position: absolute;
+}
+.marginY-block{
+    height: 100px;
+    width: 200px;
+    background: green;
+    border-radius: 30px;
+}

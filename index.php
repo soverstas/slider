@@ -4,10 +4,17 @@
     <title>magic slider</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="slider-for-task.css" rel="stylesheet" media="screen">
+    <link href="marginX.css" rel="stylesheet" media="screen">
+    <link href="absolute.css" rel="stylesheet" media="screen">
+    <link href="slider-in-slider.css" rel="stylesheet" media="screen">
     <script src="jquery.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="jquery.sliderGo.js"></script>
     <script src="js.js"></script>
+    <script src="marginX.js"></script>
+    <script src="absolute.js"></script>
+    <script src="slider-in-slider.js"></script>
     <style>
       div {
 
@@ -25,95 +32,11 @@
         background:black;
         color: greenyellow;
       }
-      .curtain{
-        width: 400px;
-        height: 400px;
-        position: relative;
-        overflow: hidden;
-      }
-      .stage {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-      }
 
-      .curtain-mini {
-        width: 400px;
-        height: 70px;
-        position: relative;
-        overflow: hidden;
-      }
-      .stage-mini {
-        width: 100%;
-        position: absolute;
-      }
-      .item-mini {
-        height: 70px;
-        width: 100px;
-        font-weight: bold;
-        color: white;
-        background: #9A0;
-        position: absolute;
-        text-align: center;
-        vertical-align: middle;
-        border-radius: 15px;
-      }
-      .item {
-        border-radius: 15px;
-        font-weight: bold;
-        color: white;
-        font-size: 1.5em;
-        background: #9A0;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        text-align: center;
-        vertical-align: middle;
-      }
-      .slider .navigation {
-        top: 30px;
-        z-index: 99;
-        position: absolute;
-      }
-      
-      .navigation div{
-        border-radius: 25px;
-        background: white;
-        color: #9A0;
-        height: 30px;
-        font-size: 1em;
-        text-align: center;
-      }
-      .navigation div:hover{
-        background: #9A0;
-        font-size: 1.5em;
-        color: white;
-        -moz-user-select: -moz-none;
-        -o-user-select: none;
-        -webkit-user-select: none;
-        user-select: none;
-        cursor: default;
-      }
-      .slider-pager {
-        width: 300px;
-        list-style: none;
-        display: inline;
-      }
-      .slider-pager-item {
-        color: #9A0;
-        -moz-user-select: -moz-none;
-        -o-user-select: none;
-        -webkit-user-select: none;
-        user-select: none;
-        cursor: default;
-        padding: 5px;
-        border: 2px solid #9A0;
-        font-size: 1em;
-        display: inline;
-      }
-      .slider-pager-item:hover {
-        background: #9A0;
-        color:white;
+      hr {
+        padding-top: 20px;
+        clear: both;
+        border-bottom: 2px solid gray;
       }
     </style>
 
@@ -208,21 +131,266 @@
               </div>
             </div>
           </div>
-                    <div class="full btn">
+          <div class="full btn">
             DO BIGGER
           </div>
         </div>
-        
-
-        <div class="span4 offset2">
+        <div class="span8">
+          <p>Два слайдера в одном. Мини-слайдер - является пагинатором для большого слайдера. Есть swipe у большолго слайдера. Поддержка ajax. При нажатии соответсвующей кнопки width/height элемента большого слайдера увеличивается/уменьшается.</p>
           Инициализация:<br />
-          <div class="code-wrapper">
-            <pre class="code">
-              <?php echo file_get_contents('js.js'); ?>
-            </pre>
+          <div class="span5">
+            <div class="code-wrapper">
+              <pre class="code">
+<?php echo htmlspecialchars(file_get_contents('slider-for-task.css')); ?>
+              </pre>
+            </div>
+          </div>
+          <div class="span5">
+            <div class="code-wrapper">
+              <pre class="code">
+<?php echo htmlspecialchars(file_get_contents('js.js')); ?>
+              </pre>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+        <hr />
+        <div class="row-fluid">
+          <div class="span4">
+            <div class="margin-slider-x">
+              <div class="marginX-display">
+                <div class="marginX-wrapper" style="width: 9999px">
+                  <div class="marginX-block"></div>
+                  <div class="marginX-block"></div>
+                  <div class="marginX-block"></div>
+                  <div class="marginX-block"></div>
+                </div>
+              </div>
+              <br />
+              <div class="direction-button" style="position: relative; z-index: 100">
+                <a accesskey="a" href="#" class="go-prev">&larr;</a>
+                <a accesskey="d" href="#" class="go-next">&rarr;</a>
+              </div>
+              <br />
+              <ul class="marginX-pager" style="list-style: none;">
+              </ul>
+            </div>
+            <br />
+            <br />
+            <div class="margin-slider-y">
+              <div class="marginY-display">
+                <div class="marginY-wrapper" style="width: 9999px">
+                  <div class="marginY-block"></div>
+                  <div class="marginY-block"></div>
+                  <div class="marginY-block"></div>
+                  <div class="marginY-block"></div>
+                </div>
+              </div>
+              <br />
+              <div class="direction-button" style="position: relative; z-index: 100">
+                <a accesskey="a" href="#" class="go-prev">&larr;</a>
+                <a accesskey="d" href="#" class="go-next">&rarr;</a>
+              </div>
+              <br />
+              <ul class="marginY-pager" style="list-style: none;">
+              </ul>
+            </div>
+          </div>
+          <div class="span8">
+            <p>слайдер для перемещения элементов использует маржин. стоит блокировка прокрутки по кругу(первый слайдер). есть прокрутка свайпом.в таймер. пагинатор.</p>
+            <div class="span5">
+              <div class="code-wrapper">
+                <pre class="code">
+<?php echo htmlspecialchars(file_get_contents('marginX.css')); ?>
+                </pre>
+              </div>
+            </div>
+            <div class="span5">
+              <div class="code-wrapper">
+                <pre class="code">
+<?php echo htmlspecialchars(file_get_contents('marginX.js')); ?>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        
+        <div class="row-fluid">
+          <div class="span4">
+            <div class="slider-absolute-x">
+            <div class="slider-absolute-x-display-wrapper">
+                <div class="slider-absolute-x-display">
+                    <div class="slider-absolute-x-display-item" style="background: #ff0;">image 1</div>
+                    <div class="slider-absolute-x-display-item" style="width: 140; background: #0ff;">image 2</div>
+                    <div class="slider-absolute-x-display-item" style="background: #f0f;">image 3</div>
+                    <div class="slider-absolute-x-display-item" style="background: #00f;">image 4</div>
+                    <div class="slider-absolute-x-display-item" style="width: 180; background: #f00;">image 5</div>
+                </div>
+            </div>
+            <br /><br />
+            <ul class="slider-absolute-x-pager">
+
+            </ul>
+            <br /><br />
+            <br /><br />
+            <div class="slider-direction-button" style="position: relative;">
+                <a accesskey="a" href="#" class="go-prev">&larr;</a>
+                <a accesskey="d" href="#" class="go-next">&rarr;</a>
+            </div>
+          </div>
+          <br />
+          <br />
+        <div class="slider-absolute-y">
+          <div class="slider-absolute-y-display-wrapper">
+              <div class="slider-absolute-y-display">
+                  <div class="slider-absolute-y-display-item" style="background: #ff0;">image 1</div>
+                  <div class="slider-absolute-y-display-item" style="width: 140; background: #0ff;">image 2</div>
+                  <div class="slider-absolute-y-display-item" style="background: #f0f;">image 3</div>
+                  <div class="slider-absolute-y-display-item" style="background: #00f;">image 4</div>
+                  <div class="slider-absolute-y-display-item" style="width: 180; background: #f00;">image 5</div>
+              </div>
+          </div>
+          <br /><br />
+          <ul class="slider-absolute-y-pager">
+
+          </ul>
+          <br /><br />
+          <br /><br />
+          <div class="slider-direction-button" style="position: relative;">
+              <a accesskey="a" href="#" class="go-prev">&larr;</a>
+              <a accesskey="d" href="#" class="go-next">&rarr;</a>
+          </div>
+        </div>
+        </div>
+          <div class="span8">
+            <p>Перемещение элементов сталайдера проиходит абсолютно. у пагинатора есть ховер-эффект. ajax.</p>
+            <div class="span5">
+              <div class="code-wrapper">
+                <pre class="code">
+<?php echo htmlspecialchars(file_get_contents('absolute.css')); ?>
+                </pre>
+              </div>
+            </div>
+            <div class="span5">
+              <div class="code-wrapper">
+                <pre class="code">
+<?php echo htmlspecialchars(file_get_contents('absolute.js')); ?>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <hr />
+        <div class="row-fluid">
+          <div class="span4">
+            <div class="slider-absolute-x-in">
+            <div class="slider-absolute-x-display-wrapper">
+                <div class="slider-absolute-x-display">
+                  <div class="margin-slider-in-slider-x slider-absolute-x-display-item">
+                    <div class="margin-display">
+                        <div class="margin-wrapper" style="width: 9999px">
+                            <div class ="testblock-x">test 0
+                            </div>
+                            <div class ="testblock-x">test 1
+                            </div>
+                            <div class ="testblock-x">test 2
+                            </div>
+                            <div class ="testblock-x">test 3
+                            </div>
+                            <div class ="testblock-x">test 4
+                            </div>
+                            <div class ="testblock-x">test 5
+                            </div>
+                            <div class ="testblock-x">test 6
+                            </div>
+                            <div class ="testblock-x">test 7
+                            </div>
+                        </div>
+                    </div>
+                    <div class="direction-button" style="position: relative; z-index: 100">
+                        <a accesskey="a" href="#" class="go-prev">&larr;</a>
+                        <a accesskey="d" href="#" class="go-next">&rarr;</a>
+                    </div>
+                </div>
+                    <div class="slider-absolute-x-display-item" style="background: #ff0;">image 1</div>
+                    <div class="margin-slider-in-slider-x slider-absolute-x-display-item">
+                    <div class="margin-display">
+                        <div class="margin-wrapper" style="width: 9999px">
+                            <div class ="testblock-x">test 0
+                            </div>
+                            <div class ="testblock-x">test 1
+                            </div>
+                            <div class ="testblock-x">test 2
+                            </div>
+                            <div class ="testblock-x">test 3
+                            </div>
+                            <div class ="testblock-x">test 4
+                            </div>
+                            <div class ="testblock-x">test 5
+                            </div>
+                            <div class ="testblock-x">test 6
+                            </div>
+                            <div class ="testblock-x">test 7
+                            </div>
+                        </div>
+                    </div>
+                    <div class="direction-button" style="position: relative; z-index: 100">
+                        <a accesskey="a" href="#" class="go-prev">&larr;</a>
+                        <a accesskey="d" href="#" class="go-next">&rarr;</a>
+                    </div>
+                </div>
+                    <div class="slider-absolute-x-display-item" style="width: 140; background: #0ff;">image 2</div>
+                <div class="slider-absolute-y slider-absolute-x-display-item">
+                <div class="slider-absolute-y-display-wrapper">
+                    <div class="slider-absolute-y-display">
+                        <div class="slider-absolute-y-display-item" style="background: #ff0;">image 1</div>
+                        <div class="slider-absolute-y-display-item" style="width: 140; background: #0ff;">image 2</div>
+                        <div class="slider-absolute-y-display-item" style="background: #f0f;">image 3</div>
+                        <div class="slider-absolute-y-display-item" style="background: #00f;">image 4</div>
+                        <div class="slider-absolute-y-display-item" style="width: 180; background: #f00;">image 5</div>
+                    </div>
+                </div>
+                <div class="slider-direction-button" style="position: relative;">
+                    <a accesskey="a" href="#" class="go-prev">&larr;</a>
+                    <a accesskey="d" href="#" class="go-next">&rarr;</a>
+                </div>
+              </div>
+                    <div class="slider-absolute-x-display-item" style="background: #f0f;">image 3</div>
+                    <div class="slider-absolute-x-display-item" style="background: #00f;">image 4</div>
+                    <div class="slider-absolute-x-display-item" style="width: 180; background: #f00;">image 5</div>
+                </div>
+            </div>
+            <br /><br />
+            <ul class="slider-absolute-x-pager">
+
+            </ul>
+            <br /><br />
+            <br /><br />
+            <div class="slider-direction-button" style="position: relative;">
+                <a accesskey="a" href="#" class="go-prev-main">&larr;</a>
+                <a accesskey="d" href="#" class="go-next-main">&rarr;</a>
+            </div>
+          </div>
+            </div>
+          <div class="span8">
+            <p>слайдер для перемещения элементов использует маржин. стоит блокировка прокрутки по кругу(первый слайдер). есть прокрутка свайпом. таймер. пагинатор.</p>
+            <div class="span5">
+              <div class="code-wrapper">
+                <pre class="code">
+<?php echo htmlspecialchars(file_get_contents('slider-in-slider.css')); ?>
+                </pre>
+              </div>
+            </div>
+            <div class="span5">
+              <div class="code-wrapper">
+                <pre class="code">
+<?php echo htmlspecialchars(file_get_contents('slider-in-slider.js')); ?>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
   </body>
 </html>

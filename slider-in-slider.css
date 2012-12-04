@@ -1,0 +1,32 @@
+.margin-display {
+    width: 200px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #0f0;
+}
+
+.margin-wrapper {
+    width: 200x;
+    height: 9999px;
+    position: absolute;
+}
+.testblock-x{
+    float: left;
+    height: 100px;
+    width: 200px;
+    border-radius: 30px;
+}
+.testblock-y{
+    height: 100px;
+    width: 200px;
+    border-radius: 30px;
+}
+.slider-absolute-x-in .slider-absolute-x-display-wrapper{
+    width: 400px;
+    height: 400px;
+}
+.slider-absolute-x-in .slider-absolute-x-display-item{
+    width: 200px;
+    height: 300px;
+}
